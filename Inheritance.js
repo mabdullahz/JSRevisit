@@ -9,6 +9,7 @@ SuperClass.prototype.getName = function () {
 }
 
 function SubClass () {
+  SuperClass.call(this)
   this.type = 1
 }
 
