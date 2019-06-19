@@ -1,31 +1,33 @@
 /* Inheritance */
 
-function SuperClass () {
-  this.name = 'SuperClass'
+function Person (first, last, age, gender, interests) {
+  this.name = {
+    first,
+    last
+  }
+  this.age = age
+  this.gender = gender
+  this.interests = interests
+};
+
+Person.prototype.greeting = function () {
+  return ('Hi! I\'m ' + this.name.first + '.');
 }
 
-SuperClass.prototype.getName = function () {
-  return this.name
+var p1 = new Person('Atif', 'Aslam', 35, 'M', 'Music')
+console.log(p1.greeting())
+
+function Teacher (first, last, age, gender, interests, subject) {
+  Person.call(this, first, last, age, gender, interests)
+  this.subject = subject
 }
 
-function SubClass () {
-  SuperClass.call(this)
-  this.type = 1
+Teacher.prototype = Object.create(Person.prototype)
+Teacher.prototype.constructor = Teacher
+
+Teacher.prototype.greeting = function () {
+  return ('Hi Students! I\'m ' + this.name.first + '.')
 }
 
-/* A property defined at this point will be overwritten */
-// SubClass.prototype.getType = function () {
-//   return this.type
-// }
-
-SubClass.prototype = new SuperClass()
-
-SubClass.prototype.getType = function () {
-  return this.type
-}
-
-var obj = new SubClass()
-console.log(obj.name)
-console.log(obj.type)
-console.log(obj.getName())
-console.log(obj.getType())
+var p2 = new Teacher('Karim', 'Nawaz', 45, 'M', 'Music', 'Computer Science')
+console.log(p2.greeting())
