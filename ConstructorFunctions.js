@@ -8,6 +8,7 @@ var objectLiteralWay = {
     return this.firstname + ' ' + this.lastname
   }
 }
+console.log(objectLiteralWay)
 
 // 2. Using the Global object as base
 var newObjectWay = new Object()

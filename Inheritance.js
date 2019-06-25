@@ -11,7 +11,7 @@ function Person (first, last, age, gender, interests) {
 };
 
 Person.prototype.greeting = function () {
-  return ('Hi! I\'m ' + this.name.first + '.');
+  return ('Hi! I\'m ' + this.name.first + '.')
 }
 
 var p1 = new Person('Atif', 'Aslam', 35, 'M', 'Music')
