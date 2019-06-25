@@ -11,6 +11,7 @@ var objectLiteralWay = {
 console.log(objectLiteralWay)
 
 // 2. Using the Global object as base
+// eslint-disable-next-line no-new-object
 var newObjectWay = new Object()
 newObjectWay['first'] = ''
 newObjectWay['last'] = ''

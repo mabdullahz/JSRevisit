@@ -20,7 +20,7 @@ console.log(
   (function () {
     return this
   })()
-)
+);
 
 // with `new` instance, local context is returned
 (function () {
