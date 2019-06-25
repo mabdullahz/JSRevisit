@@ -1,19 +1,19 @@
 /* `this` keyword */
 
-// function Test1 () {
-//   return this
-// }
+function Test1 () {
+  return this
+}
 
-// let Test2 = function () {
-//   return this
-// }
+let Test2 = function () {
+  return this
+}
 
-// console.log(Test1()) // refers to global execution context
-// console.log(new Test1()) // refers to lexical/functional scope of the newly created object
+console.log(Test1()) // refers to global execution context
+console.log(new Test1()) // refers to lexical/functional scope of the newly created object
 
-// // Same goes for function expressions
-// console.log(Test2()) // refers to global execution context
-// console.log(new Test2()) // refers to lexical/functional scope of the newly created object
+// Same goes for function expressions
+console.log(Test2()) // refers to global execution context
+console.log(new Test2()) // refers to lexical/functional scope of the newly created object
 
 /* IIFEs does have access to outside context */
 console.log(
